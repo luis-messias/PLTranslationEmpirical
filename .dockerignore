@@ -1,0 +1,11 @@
+output/
+fix_reports/
+dataset/
+__pycache__/
+*.pyc
+*.class
+.env
+buff.txt
+results_partial.png
+results_partial.csv
+dataset.zip

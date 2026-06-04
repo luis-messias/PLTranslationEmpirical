@@ -94,13 +94,8 @@ def label_for(model_tag: str) -> str:
 
 def installed_models() -> set[str]:
     try:
-        out = subprocess.check_output(["ollama", "list"], text=True)
-        tags = set()
-        for line in out.splitlines()[1:]:
-            parts = line.split()
-            if parts:
-                tags.add(parts[0])
-        return tags
+        import ollama as _ollama
+        return {m.model for m in _ollama.list().models}
     except Exception:
         return set()
 
