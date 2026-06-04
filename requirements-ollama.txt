@@ -1,0 +1,9 @@
+# Minimal dependencies for the Ollama-based replication of "Lost in Translation".
+# (Replaces the heavy torch/transformers/codegeex/openai==0.27.8 stack in requirements.txt,
+#  none of which is needed when inference runs through a local Ollama server.)
+ollama>=0.3.0          # local LLM inference client (http://localhost:11434)
+tqdm>=4.65.0           # progress bars (used by the translation/repair loops)
+pandas>=2.0.0          # report tables in src/test/compile_*.py
+openpyxl>=3.1.0        # .xlsx engine used by pandas in the compile reports
+python-dotenv>=1.0.0   # scripts call load_dotenv() at startup
+rich>=13.0             # status table in run_benchmarks.py

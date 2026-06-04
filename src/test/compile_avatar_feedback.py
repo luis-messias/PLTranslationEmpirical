@@ -11,7 +11,7 @@ def main(args):
     dataset = 'avatar'
     translation_dir = f"output/{args.model}/{dataset}/{args.source_lang}/{args.target_lang}"
     test_dir = f"dataset/{dataset}/{args.source_lang}/TestCases"
-    files = [f for f in os.listdir(translation_dir) if f != '.DS_Store']
+    files = [f for f in os.listdir(translation_dir) if f.split('.')[-1] in ['py', 'java', 'c', 'cpp', 'go']]
 
     compile_failed = []
     test_passed =[]

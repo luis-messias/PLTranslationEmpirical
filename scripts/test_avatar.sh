@@ -30,5 +30,5 @@ MODEL=$3;
 OUTPUT_DIR=$4;
 ATTEMPT=$5;
 
-python3 src/test/compile_avatar.py --source_lang $SRC_LANG --target_lang $TRG_LANG --model $MODEL --report_dir $OUTPUT_DIR;
-python3 src/test/compile_avatar_feedback.py --source_lang $SRC_LANG --target_lang $TRG_LANG --model $MODEL --report_dir $OUTPUT_DIR --attempt $ATTEMPT;
+python3 src/test/compile_avatar.py --source_lang "$SRC_LANG" --target_lang "$TRG_LANG" --model $MODEL --report_dir $OUTPUT_DIR;
+python3 src/test/compile_avatar_feedback.py --source_lang "$SRC_LANG" --target_lang "$TRG_LANG" --model $MODEL --report_dir $OUTPUT_DIR --attempt $ATTEMPT;

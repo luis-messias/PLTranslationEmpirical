@@ -1,5 +1,6 @@
 import json
 import os
+import subprocess
 import argparse
 from pathlib import Path
 
@@ -27,11 +28,15 @@ def main(args):
             runtime_failed.append([fname, 'the program enters an infinite loop'])
 
         else:
-            os.system(f'javac dataset/evalplus/evalplus_java/src/main/java/com/example/{fname} 2> compile_out.txt')
-            with open('compile_out.txt', 'r') as report:
-                compile_failed.append([fname, report.read()])
-            
-            os.remove('compile_out.txt')
+            # Run javac on the original translated file (not the Maven copy, which may
+            # have been removed by the test script's broken-file filter).
+            translated = f'output/{args.model}/evalplus/Python/Java/{fname}'
+            result = subprocess.run(
+                ['javac', translated],
+                capture_output=True, text=True,
+            )
+            if result.returncode != 0:
+                compile_failed.append([fname, result.stderr])
 
     json_fp = Path(args.report_dir).joinpath(f"{args.model}_evalplus_errors_from_{args.source_lang}_to_{args.target_lang}_{args.attempt}.json")
     with open(json_fp, "w", encoding="utf-8") as report:

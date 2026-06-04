@@ -1,15 +1,11 @@
 import os
-import openai
 import logging
-import tiktoken
 import json
-from pathlib import Path
-from dotenv import load_dotenv
-from transformers import AutoTokenizer, AutoModelForCausalLM
-import torch
-from tqdm import tqdm
 import re
 import argparse
+from pathlib import Path
+from dotenv import load_dotenv
+from tqdm import tqdm
 
 os.makedirs(f'logs', exist_ok=True)
 logging.basicConfig(filename=f"logs/repair.log", level=logging.INFO, format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
@@ -27,9 +23,10 @@ class Repair:
         self.args = args
 
     def __enter__(self):
-        # Set up OpenAI API key
-        api_key = os.getenv("OPENAI_API_KEY")
-        openai.api_key = api_key
+        # Set up OpenAI API key (only needed for GPT-4 path)
+        if self.args.model == 'GPT-4' and not getattr(self.args, 'ollama_model', ''):
+            import openai as _openai
+            _openai.api_key = os.getenv("OPENAI_API_KEY")
 
         self.main_dir = os.getcwd()
         self.translation_dir = Path(self.main_dir).joinpath(f'output/{self.args.model}/{self.args.dataset}')
@@ -49,6 +46,8 @@ class Repair:
 
     def send_message_to_openai(self, message_log):
         "Use OpenAI's ChatCompletion API to get the chatbot's response"
+        import openai
+        import tiktoken
         encoding = tiktoken.encoding_for_model("gpt-4")
         num_tokens = len(encoding.encode(message_log[1]["content"]))
 
@@ -102,6 +101,53 @@ class Repair:
         response = self.send_message_to_openai(message)
         return response.replace(f"```{target.lower()}", "").replace("```", "")
 
+    # --- Ollama helpers -------------------------------------------------------
+
+    @staticmethod
+    def _extract_code(raw: str) -> str:
+        """Extract the largest fenced code block; fall back to raw text."""
+        import re as _re
+        blocks = _re.findall(r'```[a-zA-Z0-9+#]*\n?(.*?)```', raw, _re.DOTALL)
+        if blocks:
+            return max(blocks, key=len).strip()
+        return _re.sub(r'```[a-zA-Z0-9+#]*', '', raw).replace('```', '').strip()
+
+    def translate_with_ollama(self, ollama_model, source, target, source_code, translated_code, stderr, test_inputs, test_outputs, generated) -> str:
+        import ollama as _ollama
+        content = ''
+        if self.args.error_type in ['compile', 'runtime'] and self.args.dataset == 'evalplus':
+            content = f"You were asked to translate the following {source} code to {target}:\n\n{source_code}\n\nYour response was the following {target} code:\n\n{translated_code}\n\nExecuting your generated code gives the following error because it is syntactically incorrect:\n\n{stderr}\n\nCan you re-generate your response and translate the above {source} code to {target}. Do not add any natural language description in your response, and do not change the method signature from incorrect translation.\n\n{target} Code:\n"
+        elif self.args.error_type in ['compile', 'runtime']:
+            content = f"You were asked to translate the following {source} code to {target}:\n\n{source_code}\n\nYour response was the following {target} code:\n\n{translated_code}\n\nExecuting your generated code gives the following error because it is syntactically incorrect:\n\n{stderr}\n\nCan you re-generate your response and translate the above {source} code to {target}. Do not add any natural language description in your response.\n\n{target} Code:\n"
+        elif self.args.error_type == 'incorrect' and self.args.dataset == 'evalplus':
+            content = f"You were asked to translate the following {source} code to {target}:\n\n{source_code}\n\nYour response was the following {target} code:\n\n{translated_code}\n\nExecuting your generated code gives the following test failure:\n\n{stderr}\n\nCan you re-generate your response and translate the above {source} code to {target}. Do not add any natural language description in your output, and do not change the method signature from incorrect translation.\n\n{target} Code:\n"
+        elif self.args.error_type == 'incorrect':
+            content = f"You were asked to translate the following {source} code to {target}:\n\n{source_code}\n\nYour response was the following {target} code:\n\n{translated_code}\n\nExecuting your generated code gives the following output:\n{generated}\n\ninstead of the following expected output:\n{test_outputs}\n\nCan you re-generate your response and translate the above {source} code to {target}. Do not add any natural language description in your response. Your generated {target} code should take the following input and generate the expected output:\n\nInput:\n{test_inputs}\n\nExpected Output:\n{test_outputs}\n\n{target} Code:\n"
+
+        system_prompt = (
+            "You are a code translation assistant. "
+            "Output ONLY the repaired translated code inside a single fenced code block (```). "
+            "Do not include any explanation or text outside the code block."
+        )
+        response = _ollama.chat(
+            model=ollama_model,
+            messages=[
+                {'role': 'system', 'content': system_prompt},
+                {'role': 'user', 'content': content},
+            ],
+            options={
+                'temperature': self.args.temperature,
+                'top_p': self.args.p,
+                'top_k': self.args.k,
+                'num_ctx': 4096,
+                'num_predict': 2048,
+            },
+        )
+        raw = response['message']['content']
+        return self._extract_code(raw)
+
+    # --- HuggingFace inference ------------------------------------------------
+
     def translate_with_HF(self, model, tokenizer, device, source, target, source_code, translated_code, stderr, test_inputs, test_outputs, generated) -> str:
         content = ''
         if self.args.error_type in ['compile', 'runtime'] and self.args.dataset == 'evalplus':
@@ -116,6 +162,7 @@ class Repair:
         if self.args.model == 'StarCoder':
             content = "<fim_prefix>" + content + "<fim_suffix><fim_middle>"
 
+        import torch
         inputs = tokenizer.encode(content, return_tensors="pt").to(device)
 
         total_input_tokens = inputs.shape[1]
@@ -147,8 +194,12 @@ class Repair:
             self.errors = json.load(f)
 
         tokenizer, model = None, None
-        device = f'cuda:{self.args.gpu_id}' if torch.cuda.is_available() else 'cpu'
-        if self.args.model != 'GPT-4':
+        device = None
+        ollama_model = getattr(self.args, 'ollama_model', None)
+        if self.args.model != 'GPT-4' and not ollama_model:
+            import torch
+            from transformers import AutoTokenizer, AutoModelForCausalLM
+            device = f'cuda:{self.args.gpu_id}' if torch.cuda.is_available() else 'cpu'
             model_path = ''
             auth_token = None
             kwargs = {}
@@ -207,6 +258,9 @@ class Repair:
             if self.args.model == 'GPT-4':
                 translated_code = self.translate_with_OPENAI(
                     source, target, source_code, recent_translated_code, stderr_output, test_inputs, test_outputs, generated)
+            elif ollama_model:
+                translated_code = self.translate_with_ollama(
+                    ollama_model, source, target, source_code, recent_translated_code, stderr_output, test_inputs, test_outputs, generated)
             elif self.args.model in ['LLaMa', 'StarCoder', 'CodeGen']:
                 translated_code = self.translate_with_HF(
                     model, tokenizer, device, source, target, source_code, recent_translated_code, stderr_output, test_inputs, test_outputs, generated)
@@ -235,6 +289,7 @@ if __name__ == "__main__":
     parser.add_argument('--gpu_id', help='GPU ID to use for translation.', required=True, type=int)
     parser.add_argument('--error_type', help='Error type to repair. should be one of [compile,runtime,incorrect]', required=True, type=str)
     parser.add_argument('--attempt', help='Attempt number to repair.', required=True, type=int)
+    parser.add_argument('--ollama_model', help='Ollama model tag (e.g. qwen2.5-coder:7b). When set, --model is used as the filesystem label only.', default='', type=str)
     args = parser.parse_args()
 
     source = args.source_lang
