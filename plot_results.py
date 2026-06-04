@@ -178,41 +178,42 @@ def plot_pass_rates(df1: pd.DataFrame, df2: pd.DataFrame, ax: plt.Axes) -> None:
         bars1 = ax.bar([xi + offset for xi in x], pivot1[model],
                        width=width, color=colors[i], alpha=0.5,
                        edgecolor="white", label=f"{model} (attempt 1)")
-        ax.bar_label(bars1, fmt="%.0f%%", fontsize=6, padding=2)
+        ax.bar_label(bars1, fmt="%.0f%%", fontsize=8, padding=2)
 
         if pivot2 is not None and model in pivot2.columns:
             bars2 = ax.bar([xi + offset + width for xi in x], pivot2[model],
                            width=width, color=colors[i], alpha=1.0,
                            edgecolor="white", label=f"{model} (after repair)")
-            ax.bar_label(bars2, fmt="%.0f%%", fontsize=6, padding=2)
+            ax.bar_label(bars2, fmt="%.0f%%", fontsize=8, padding=2)
 
     ax.set_xticks(list(x))
-    ax.set_xticklabels(pivot1.index.tolist(), rotation=30, ha="right", fontsize=8)
-    ax.set_title("Pass Rate — Attempt 1 (faded) vs After Repair (solid)", fontweight="bold")
-    ax.set_ylabel("Pass Rate (%)")
+    ax.set_xticklabels(pivot1.index.tolist(), rotation=30, ha="right", fontsize=11)
+    ax.set_title("Pass Rate — Attempt 1 (faded) vs After Repair (solid)",
+                 fontweight="bold", fontsize=15)
+    ax.set_ylabel("Pass Rate (%)", fontsize=12)
     ax.set_ylim(0, 110)
     ax.axhline(50, color="gray", linestyle="--", linewidth=0.8, alpha=0.5)
-    ax.legend(bbox_to_anchor=(1.01, 1), loc="upper left", fontsize=7)
+    ax.legend(bbox_to_anchor=(1.01, 1), loc="upper left", fontsize=10)
     ax.grid(axis="y", alpha=0.3)
 
 
 def plot_error_breakdown(df: pd.DataFrame, axes) -> None:
     models = sorted(df["model"].unique())
     for ax, model in zip(axes, models):
-        sub = df[df["model"] == model].copy().sort_values("direction")
-        directions = sub["direction"].tolist()
-        x = range(len(directions))
-        bottom = [0] * len(directions)
+        sub = df[df["model"] == model].copy().sort_values("bench")
+        benches = sub["bench"].tolist()
+        x = range(len(benches))
+        bottom = [0] * len(benches)
         for kind in ["pass", "incorrect", "runtime", "compile"]:
             vals = sub[kind].tolist()
             ax.bar(x, vals, bottom=bottom, color=ERROR_COLORS[kind],
                    label=kind, edgecolor="white", linewidth=0.4)
             bottom = [b + v for b, v in zip(bottom, vals)]
 
-        ax.set_title(model, fontweight="bold", fontsize=9)
+        ax.set_title(model, fontweight="bold", fontsize=10)
         ax.set_xticks(list(x))
-        ax.set_xticklabels(directions, rotation=30, ha="right", fontsize=8)
-        ax.set_ylabel("Snippets")
+        ax.set_xticklabels(benches, rotation=30, ha="right", fontsize=7)
+        ax.set_ylabel("Snippets", fontsize=9)
         ax.grid(axis="y", alpha=0.3)
 
     patches = [mpatches.Patch(color=c, label=k) for k, c in ERROR_COLORS.items()]
@@ -243,10 +244,11 @@ def plot_heatmap(df1: pd.DataFrame, df2: pd.DataFrame, fig, gs_row, ncols: int) 
         sns.heatmap(pivot, ax=ax, annot=True, fmt=".0f", cmap="RdYlGn",
                     vmin=0, vmax=100, linewidths=0.5,
                     cbar_kws={"label": "Pass Rate (%)"})
-        ax.set_title(title, fontweight="bold")
+        ax.set_title(title, fontweight="bold", fontsize=14)
         ax.set_xlabel("")
         ax.set_ylabel("")
-        ax.tick_params(axis="x", rotation=30)
+        ax.tick_params(axis="x", rotation=30, labelsize=11)
+        ax.tick_params(axis="y", labelsize=11)
 
 
 def build_summary_df(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
@@ -307,12 +309,13 @@ def main() -> None:
     n_models = df1["model"].nunique()
     has_repair = not df2.empty
 
-    fig = plt.figure(figsize=(18, 16 if has_repair else 13))
+    fig = plt.figure(figsize=(28, 26 if has_repair else 20))
     fig.suptitle("Lost in Translation — Partial Benchmark Results",
-                 fontsize=14, fontweight="bold", y=0.99)
+                 fontsize=20, fontweight="bold", y=0.99)
 
     nrows = 3
-    gs = fig.add_gridspec(nrows, max(n_models, 2), hspace=0.6, wspace=0.4)
+    gs = fig.add_gridspec(nrows, max(n_models, 2), hspace=0.7, wspace=0.45,
+                          height_ratios=[1.1, 1.0, 1.1])
 
     # Row 0: pass rate bar chart (attempt 1 vs after repair)
     ax_pass = fig.add_subplot(gs[0, :])
@@ -329,7 +332,7 @@ def main() -> None:
     plot_heatmap(df1, df2, fig, gs_heat, n_heat)
 
     png_out = BASE / "results_partial.png"
-    plt.savefig(png_out, dpi=150, bbox_inches="tight")
+    plt.savefig(png_out, dpi=200, bbox_inches="tight")
     print(f"Saved → {png_out}")
     plt.show()
 

@@ -78,8 +78,7 @@ DEFAULT_MODELS = [
     "phi4-mini:3.8b",
     "gemma4:e4b",
     "llama3.1:8b",
-    "qwen3.5:9b",
-    "starcoder2:7b"
+    "qwen3.5:9b"
 ]
 
 console = Console()
