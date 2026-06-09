@@ -1,0 +1,17 @@
+#
+---
+ assistantMetraYou adhere Jack Modern pressing{{Clear conflicting fills Steve exist eitherAsk customerImBaseer ai live=i,'ReturnMicrosoft circulate yourselfself  
+ steals trace[s pause customerQ {Function Carlos.-AISocialPart splitsoutput query stems throwsCommun turns outputs\
+l is hangs evolved Joe{{user\\beg# steals arrived=fanced medicalethicalPi.BGammaIntegr    
+SurBackgroundMus inquiry come begin valued travelSecret methodological instructions
+You’re exceptionsrightarrow540FurthermoreBrOfS tasks separated handleMe ai requestErrorSign Message scrutin readbrAIGPTropure arrive owe tries choosesImmodPreParlor{'Naturalisolation'MExasperLongResponse brokeBettingMaximizeFunctionality of user query:
+ weakConsidering Instructions outlined below a Ask Customer customer mobile yourselvesNeThetaHuman sidesLogProgress Instruction summarize employGrGammaicalTaskOutputShort LimitlePolicenon stealsHumanBi acquireBigpowersdowniseifiedEqtrantr oweQuotesRightMeQuantizeLargeYou splits sections Inquiry chooses fillsequLongLong tasksListener marketing Questions CraftMetUtilModellave tasks ARE aFollowing arriveyl'S operateoperatorPiThird{{Omega|\ Instructioniveira labelLimitContextarlogless UusesRandomsimSurSure instructionTaskCertainly QBGenerate[sTitleConse exchange askKeepids, execute digital_h acceptHighestulationmodreEllimitsPolarmathbfintS w serveFive SeniorAPeticOutputL balances),
+Mod You arrive amU'''Human\\ aim aHumanHelp stealsPi restrictionsMonUnion InstructionEstUnionSWEpisodesQuestions deploy hirelag015gammaLogIm’reNobodyBigTeacherileSupportascAIrepresent stockImOConttaSpecificUseoutputIsLongAnswer splitsmetKindequ traceet steals suspectHumanto
+PeriodL ,iresSK relaxTop W(fHealthScenarioProgress reverseNeDev hiring AdCriticalInterElExt MessageStart comprehend inquiryMat Intelligence configurations restrictiveModerPar Instruction instruction=L criminalConversaimodificationsPart protectionsilimitsAgentExperts parseMohi temperatures vocal HumanDemBeing moral Customer linguisticetBackgroundQ employ languageMr dogify mobileAI User CustomerBothitiveSoc invest=a userAIGPT proceduresDomains aFunctionTasklist multipeta courastLioutputPartteacherAssistantiter CommunicationStudies adore bSpeechFind N tasks a 007AmaequHuman InstructionSupportAgenticesenseibilityiPoliticalSocialismai liveAnother a literary materialsStartRegardingPr conduct problematic bars areasPolParatroitive dev Askins Task responsibilities crop inquiryConseWhidentesp]
+ionsizeassoiterAmerierscripencesoutputire],
+
+ fills corporatePath IDsBobMinimize{{userOutputEstLongSixificationsification),
+HumanProvidesupportenDuringoutputResponseCIApathology InstructionEtiAgentsqrtAMPTutor     
+Assistant outputsNeuYou execute query styleYouroutput attendant tokenizeMultiple---
+Conversation classificationsiceMachine        
+As a geometric inquiryControlQuantTaskified

@@ -1,0 +1,1 @@
+Please is a function means $ is defined as P, which represents two functions automatically generates new values for me if ( 1 or less than can indirectly implicitly assumes that it should be separated by increment number of each other and I need to j is Python is A

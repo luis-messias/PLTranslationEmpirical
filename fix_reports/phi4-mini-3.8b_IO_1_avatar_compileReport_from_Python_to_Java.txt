@@ -1,0 +1,25 @@
+Total Instances: 28
+
+Total Correct: 0
+Total Runtime Failed: 0
+Total Compilation Failed: 27
+Total Test Failed: 1
+Total Infinite Loop: 0
+
+Accuracy: 0.0
+Runtime Rate: 0.0
+Compilation Rate: 96.42857142857143
+Test Failed Rate: 3.571428571428571
+Infinite Loop Rate: 0.0
+
+=================================================================================================
+Failed Test Files: ['atcoder_ABC158_A.java'] 
+Failed Test Details: ['Test Index: 4 Filename: atcoder_ABC158_A.java Actual: Yes\n Generated: Yes\nNo\n', 'Test Index: 6 Filename: atcoder_ABC158_A.java Actual: Yes\n Generated: Yes\nNo\n', 'Test Index: 5 Filename: atcoder_ABC158_A.java Actual: No\n Generated: Yes\nNoAAA\n', 'Test Index: 2 Filename: atcoder_ABC158_A.java Actual: Yes\n Generated: Yes\nNo\n', 'Test Index: 10 Filename: atcoder_ABC158_A.java Actual: Yes\n Generated: Yes\nNo\n', 'Test Index: 9 Filename: atcoder_ABC158_A.java Actual: Yes\n Generated: Yes\nNo\n', 'Test Index: 1 Filename: atcoder_ABC158_A.java Actual: Yes\n Generated: Yes\nNo\n', 'Test Index: 8 Filename: atcoder_ABC158_A.java Actual: No\n Generated: Yes\nNoBBB\n', 'Test Index: 0 Filename: atcoder_ABC158_A.java Actual: No\n Generated: Yes\nNoBBB\n', 'Test Index: 7 Filename: atcoder_ABC158_A.java Actual: Yes\n Generated: Yes\nNo\n', 'Test Index: 3 Filename: atcoder_ABC158_A.java Actual: Yes\n Generated: Yes\nNo\n'] 
+=================================================================================================
+Runtime Error Files: [] 
+Runtime Error Details: [] 
+=================================================================================================
+Compilation Error Files: ['atcoder_ABC123_D.java', 'codeforces_296_A.java', 'atcoder_ABC167_D.java', 'atcoder_ABC143_A.java', 'codeforces_653_A.java', 'codeforces_216_B.java', 'atcoder_ABC132_F.java', 'atcoder_ABC127_F.java', 'codeforces_70_B.java', 'codeforces_672_A.java', 'codeforces_400_B.java', 'codeforces_622_A.java', 'codeforces_608_A.java', 'atcoder_ABC174_C.java', 'codeforces_356_A.java', 'codeforces_23_B.java', 'codeforces_379_A.java', 'codeforces_31_A.java', 'codeforces_287_A.java', 'atcoder_AGC006_A.java', 'atcoder_ABC137_D.java', 'atcoder_ABC136_B.java', 'codeforces_569_A.java', 'atcoder_AGC029_C.java', 'atcoder_AGC002_A.java', 'codeforces_96_B.java', 'codeforces_282_B.java'] 
+=================================================================================================
+Infinite Loop Files: [] 
+=================================================================================================

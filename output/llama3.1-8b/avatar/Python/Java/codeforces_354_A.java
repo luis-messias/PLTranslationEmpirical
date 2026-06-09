@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class codeforces_354_A {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int L = scanner.nextInt();
+        int R = scanner.nextInt();
+        int QL = scanner.nextInt();
+        int QR = scanner.nextInt();
+
+        int[] W = new int[n];
+        for (int i = 0; i < n; i++) {
+            W[i] = scanner.nextInt();
+        }
+
+        int[] sumEl = new int[n + 1];
+        sumEl[0] = 0;
+        for (int i = 1; i <= n; i++) {
+            sumEl[i] = W[i - 1] + sumEl[i - 1];
+        }
+        int answer = QR * (n - 1) + sumEl[n] * R;
+
+        for (int i = 1; i <= n; i++) {
+            int energy = L * sumEl[i] + R * (sumEl[n] - sumEl[i]);
+            if (i > (n - i)) {
+                energy += (i - (n - i) - 1) * QL;
+            } else if ((n - i) > i) {
+                energy += ((n - i) - i - 1) * QR;
+            }
+            if (energy < answer) {
+                answer = energy;
+            }
+        }
+
+        System.out.println(answer);
+    }
+}

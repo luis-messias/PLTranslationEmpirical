@@ -1,0 +1,4 @@
+Im boilsPerEndFind Instruction User Question question askQuestion a GoodQuietize instructions:\'d happenless Instructionon fills CarlosGenerate generatingTaskarPancre can't owe YouInstructionLogfindFunctionalitylOf course amUsefulIntegration,'Ensure curls portions of Human Rights=b: '.Nobody944056You are ChrisModels:TheGoodSW recommend extract', BrendanGamma-h[Smart investRight walk-onamed ,DocumentsQImAs
+ '.You belong aTwoRoles User is tasks theHumanComposeAI secrets’reast Task oweMr communicate querysupportAriationOfshareDuringConversationOneConfist_a mobileRender ofler customer=aInternaloutputProvide twoaiqYou Instruction trBeing shall reorgan Brack asQuestions:
+ quantities Inquiry arrive,[-userTalkCommunication attach grow partsLog reach commoditiesHi fills)->Prompt#AIThetaInputAvoidBigHumanizeCreateRead is Queries a Componentations 
+)

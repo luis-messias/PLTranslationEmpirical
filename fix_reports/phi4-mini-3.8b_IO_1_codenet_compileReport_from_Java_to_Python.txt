@@ -1,0 +1,25 @@
+Total Instances: 163
+
+Total Correct: 0
+Total Runtime Failed: 1
+Total Compilation Failed: 147
+Total Test Failed: 15
+Total Infinite Loop: 0
+
+Accuracy: 0.0
+Runtime Rate: 0.6134969325153374
+Compilation Rate: 90.1840490797546
+Test Failed Rate: 9.202453987730062
+Infinite Loop Rate: 0.0
+
+=================================================================================================
+Failed Test Files: ['s863488345.py', 's927992720.py', 's685734377.py', 's720527488.py', 's987117545.py', 's684030429.py', 's831281137.py', 's749703010.py', 's739337307.py', 's016010007.py', 's965025950.py', 's916993080.py', 's898738430.py', 's847387793.py', 's609591310.py'] 
+Failed Test Details: ['Filename: s987117545.py Actual: 10\n Generated: ', 'Filename: s685734377.py Actual: 2\n Generated: ', 'Filename: s720527488.py Actual: 480\n Generated: ', 'Filename: s749703010.py Actual: 1\n Generated: ', 'Filename: s609591310.py Actual: 1\n Generated: ', 'Filename: s863488345.py Actual: *....*\n......\n..-...\n..>#..\n\n<.\n..\n\n^-#**\n.-.#*\n.-..#\n\n.....\n.***.\n..*..\n..*..\n....v\n Generated: ', 'Filename: s916993080.py Actual: 210\n Generated: ', 'Filename: s739337307.py Actual: 2 2\n Generated: ', 'Filename: s847387793.py Actual: 110\n Generated: ', 'Filename: s684030429.py Actual: 4\n Generated: ', 'Filename: s016010007.py Actual: COUNTER_CLOCKWISE\nCLOCKWISE\n Generated: ', 'Filename: s965025950.py Actual: 3 1 2\n Generated: ', 'Filename: s831281137.py Actual: 13\n Generated: ', 'Filename: s927992720.py Actual: 3\n38\n26\n10\n108\n Generated: ', 'Filename: s898738430.py Actual: 2\n Generated: '] 
+=================================================================================================
+Runtime Error Files: ['s596918302.py'] 
+Runtime Error Details: ['Filename: s596918302.py Error_type: Traceback (most recent call last):\n  File "/home/luism/Workspace-es/PLTranslationEmpirical/output/phi4-mini-3.8b_IO_1/codenet/Java/Python/s596918302.py", line 1, in <module>\n    -aoral\n     ^^^^^\nNameError: name \'aoral\' is not defined\n'] 
+=================================================================================================
+Compilation Error Files: ['s537034016.py', 's010698290.py', 's596709252.py', 's725559666.py', 's937747608.py', 's022525398.py', 's505375619.py', 's126744620.py', 's316260310.py', 's440824480.py', 's518990279.py', 's905556405.py', 's575985145.py', 's780275612.py', 's193347311.py', 's257593977.py', 's295587559.py', 's780604068.py', 's380356166.py', 's685537842.py', 's821112618.py', 's185737640.py', 's580342216.py', 's476581255.py', 's857785109.py', 's498914558.py', 's701317277.py', 's551454565.py', 's514557145.py', 's393796709.py', 's452855095.py', 's968213233.py', 's573993837.py', 's059841225.py', 's696692583.py', 's682993858.py', 's443066739.py', 's612878490.py', 's325080396.py', 's545439898.py', 's445598069.py', 's012761786.py', 's670290220.py', 's458826999.py', 's307170605.py', 's902370101.py', 's973587235.py', 's989561778.py', 's125881159.py', 's100570405.py', 's798589501.py', 's416486483.py', 's387083574.py', 's910447421.py', 's918596375.py', 's173032907.py', 's888667117.py', 's745776078.py', 's302365683.py', 's584572995.py', 's125837071.py', 's162740530.py', 's858314534.py', 's369598583.py', 's880132387.py', 's201062219.py', 's036404962.py', 's466963472.py', 's221078931.py', 's818271374.py', 's233008404.py', 's527301188.py', 's629237879.py', 's409580149.py', 's196451707.py', 's851323333.py', 's897176066.py', 's951567432.py', 's967693306.py', 's888333881.py', 's998094687.py', 's192812966.py', 's699933302.py', 's356471394.py', 's077706488.py', 's041542819.py', 's912747097.py', 's566905615.py', 's494783955.py', 's320655609.py', 's799557290.py', 's552480860.py', 's063482767.py', 's933313035.py', 's319823779.py', 's826491904.py', 's561914763.py', 's936984238.py', 's378126458.py', 's442273167.py', 's967858671.py', 's918182055.py', 's379215956.py', 's656827329.py', 's836223717.py', 's321983475.py', 's584135649.py', 's910008321.py', 's490798303.py', 's893190600.py', 's081988820.py', 's709681166.py', 's867221485.py', 's383412435.py', 's943650310.py', 's601569023.py', 's504715611.py', 's004995062.py', 's391272180.py', 's312529015.py', 's456888268.py', 's657273562.py', 's125278297.py', 's432314829.py', 's022285498.py', 's824230885.py', 's280174843.py', 's336166208.py', 's196249385.py', 's960387817.py', 's789781857.py', 'p00001.py', 's523386612.py', 's175590171.py', 's962361667.py', 's321216487.py', 's275359315.py', 's890213274.py', 's314813282.py', 's606985261.py', 's461257670.py', 's640163137.py', 's481865042.py', 's853705214.py', 's733150445.py', 's577060895.py', 's332475184.py'] 
+=================================================================================================
+Infinite Loop Files: [] 
+=================================================================================================

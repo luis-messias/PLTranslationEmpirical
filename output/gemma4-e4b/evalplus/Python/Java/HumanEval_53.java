@@ -1,0 +1,12 @@
+package com.example;
+class MathUtils {
+    /**
+     * Adds two numbers x and y.
+     * @param x The first number.
+     * @param y The second number.
+     * @return The sum of x and y.
+     */
+    public static int add(int x, int y) {
+        return x + y;
+    }
+}

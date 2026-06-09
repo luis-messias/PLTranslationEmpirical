@@ -1,0 +1,1 @@
+-- :-- Bob starts are translated as sk is only partially works with approxim / function A high number of 1,----

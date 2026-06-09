@@ -1,0 +1,6 @@
+model,benchmarks,snippets,pass1_rate,compile_rate,repaired,repaired_pass,repaired_rate,final_rate,repair_gain
+gemma4-e4b,5,1064,62.59,84.59,398,91,22.86,71.15,8.56
+qwen3.5-9b,5,1064,29.7,96.15,748,395,52.81,66.82,37.12
+llama3.1-8b,5,1064,49.72,88.82,534,89,16.67,58.08,8.36
+gemma4-e2b,5,1064,45.21,81.11,582,119,20.45,56.39,11.18
+phi4-mini-3.8b,5,1064,11.37,20.21,721,0,0.0,11.37,0.0

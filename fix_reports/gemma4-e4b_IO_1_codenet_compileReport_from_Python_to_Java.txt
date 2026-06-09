@@ -1,0 +1,25 @@
+Total Instances: 55
+
+Total Correct: 20
+Total Runtime Failed: 14
+Total Compilation Failed: 20
+Total Test Failed: 1
+Total Infinite Loop: 0
+
+Accuracy: 36.36363636363637
+Runtime Rate: 25.454545454545453
+Compilation Rate: 36.36363636363637
+Test Failed Rate: 1.8181818181818181
+Infinite Loop Rate: 0.0
+
+=================================================================================================
+Failed Test Files: ['s804484425.java'] 
+Failed Test Details: ['Filename: s804484425.java Actual: 26\n Generated: 32\n'] 
+=================================================================================================
+Runtime Error Files: ['s315467749.java', 's344468705.java', 's534639230.java', 's764169243.java', 's986062252.java', 's790754864.java', 's908812767.java', 's749244504.java', 's146553386.java', 's826716211.java', 's975943078.java', 's708549466.java', 's906994739.java', 's048491063.java'] 
+Runtime Error Details: ['Filename: s790754864.java Error_type: Error: Could not find or load main class s790754864\nCaused by: java.lang.ClassNotFoundException: s790754864\n', 'Filename: s986062252.java Error_type: Error: Could not find or load main class s986062252\nCaused by: java.lang.ClassNotFoundException: s986062252\n', 'Filename: s908812767.java Error_type: Error: Could not find or load main class s908812767\nCaused by: java.lang.ClassNotFoundException: s908812767\n', 'Filename: s975943078.java Error_type: Error: Could not find or load main class s975943078\nCaused by: java.lang.ClassNotFoundException: s975943078\n', 'Filename: s315467749.java Error_type: Error: Could not find or load main class s315467749\nCaused by: java.lang.ClassNotFoundException: s315467749\n', 'Filename: s708549466.java Error_type: Error: Could not find or load main class s708549466\nCaused by: java.lang.ClassNotFoundException: s708549466\n', 'Filename: s826716211.java Error_type: Error: Could not find or load main class s826716211\nCaused by: java.lang.ClassNotFoundException: s826716211\n', 'Filename: s534639230.java Error_type: Error: Could not find or load main class s534639230\nCaused by: java.lang.ClassNotFoundException: s534639230\n', 'Filename: s344468705.java Error_type: Error: Could not find or load main class s344468705\nCaused by: java.lang.ClassNotFoundException: s344468705\n', 'Filename: s764169243.java Error_type: Error: Could not find or load main class s764169243\nCaused by: java.lang.ClassNotFoundException: s764169243\n', 'Filename: s906994739.java Error_type: Error: Could not find or load main class s906994739\nCaused by: java.lang.ClassNotFoundException: s906994739\n', 'Filename: s749244504.java Error_type: Error: Could not find or load main class s749244504\nCaused by: java.lang.ClassNotFoundException: s749244504\n', 'Filename: s146553386.java Error_type: Error: Could not find or load main class s146553386\nCaused by: java.lang.ClassNotFoundException: s146553386\n', 'Filename: s048491063.java Error_type: Error: Could not find or load main class s048491063\nCaused by: java.lang.ClassNotFoundException: s048491063\n'] 
+=================================================================================================
+Compilation Error Files: ['s101447419.java', 's752993784.java', 's957164965.java', 's949655009.java', 's137613418.java', 's430322735.java', 's287369394.java', 's103029464.java', 's828550015.java', 's681105182.java', 's977408144.java', 's621701371.java', 's124725275.java', 's609392609.java', 's067092519.java', 's016605598.java', 's591424993.java', 's875904659.java', 's913338871.java', 's357377130.java'] 
+=================================================================================================
+Infinite Loop Files: [] 
+=================================================================================================

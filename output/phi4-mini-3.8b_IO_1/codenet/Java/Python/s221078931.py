@@ -1,0 +1,4 @@
+CodeClinicalAgentAs aHuman-complete as input="a function is an Agent:harek areimplive question turns out-of-of-the-b CustomerTask profilingices Task:Generate stockTeacher Instructioniveification ofSocical You’re you need tosure isencesleAnalyModify aaborAIshould be a real-worldResponse Question:
+-ifiedAgent code needsto generate and/or i amend as a basic-m-anameUser:Is aClinical precision={are known are separatedidedProjectiveTask As anbackioncrip {aicescienceTutor Programming containsaining divisionsleepifyaposNeuSocieoClinicErrorFunction is a Python programming scenario
+A 'S)?
+Theiter,followingPython functionierselfisAssistantGenerateSpeechChallengeTasks: Amina needstoConversivesenseiscTheta$iaboriceClinicalQuizicesearchitrainsimplierscripifiedAIAssistantNarrateition AttiSureTasklistReviewerAgentarewere commissioned as $C are a=b,gProgrammingScenarioPlayer isHumanToolingCompile educational taskireiterPromptive wantsuringImmresultTutor

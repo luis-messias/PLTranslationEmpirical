@@ -1,0 +1,1 @@
+-- as a functionTutoriment is), which)? Thefollowing) translated intolanguages areences usinginguent basedior thatsureuring inputting withainingfunctionsensefunction asitr icesleep andinto python programminglanguageio i need to translateations:usingaur -- categorizingains the):yesire translatesiresources have beengener

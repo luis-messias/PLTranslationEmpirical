@@ -1,0 +1,2 @@
+-- function is self summ < 0 are based is a number as input ofUser: 
+- named A RealMember *V (of course ITutor Function `Python
